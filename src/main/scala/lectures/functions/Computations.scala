@@ -41,12 +41,12 @@ object Computation extends App with Data {
   */
 object CurriedComputation extends App with Data {
 
-  def curriedComputation(filterData: String)(dataProducer: Array[String]): Array[String] = ???
+  def curriedComputation(filterData: String)(dataProducer: Array[String]): Array[String] = dataProducer.filter(dataitem =>
+    filterData.split(" ").contains(dataitem))
 
-  val partiallyAppliedCurriedFunction = ???
-
-  //val result = partiallyAppliedCurriedFunction(dataArray)
-  //result.foreach(println)
+  val partiallyAppliedCurriedFunction = curriedComputation(filterData)_
+  val result = partiallyAppliedCurriedFunction(dataArray)
+  result.foreach(println)
 }
 
 /**

@@ -42,3 +42,4 @@ object Competition extends App {
 
   print("Победила дружба")
 }
+
