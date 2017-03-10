@@ -49,6 +49,7 @@ object CurriedComputation extends App with Data {
   result.foreach(println)
 }
 
+
 /**
   * Допишите реализации методов так, что бы результат совпадал с предыдущими.
   */
