@@ -55,11 +55,17 @@ object CurriedComputation extends App with Data {
   */
 object FunctionalComputation extends App with Data {
 
-  def functionalComputation(filterData: String): (Array[String]) => Array[String] = ???
+  def functionalComputation(filterData: String): (Array[String]) => Array[String] = {
+    val splitFilterData = filterData.split(" ")
+    def funcComp(dataProducer: Array[String]): Array[String] = {
+      dataProducer.filter(dataItem => splitFilterData.contains(dataItem))
+    }
+    funcComp
+  }
 
-  val filterApplied = functionalComputation(???)
+  val filterApplied = functionalComputation(filterData)
 
-  val result = filterApplied(???)
+  val result = filterApplied(dataArray)
   result.foreach(println)
 }
 
