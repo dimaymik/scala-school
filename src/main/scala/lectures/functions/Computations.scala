@@ -68,6 +68,5 @@ object FunctionalComputation extends App with Data {
   val result = filterApplied(dataArray)
   result.foreach(println)
 }
-//test
 
 
