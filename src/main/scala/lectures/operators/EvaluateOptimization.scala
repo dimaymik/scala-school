@@ -19,27 +19,35 @@ object EvaluateOptimization extends App with Data {
 
 
   // ВЫПОЛНИТЬ В ЦИКЛЕ  ОТ 1 ДО 100 Computation.computation(
-  //    for(??? <- ???) {
-  //    print("elapsed time in Computation.computation" + (System.currentTimeMillis() - startTimestamp))
-  //   }
+      for(i <- 1 to 100) {
+        if(i == 100) {
+          println("elapsed time in Computation.computation " + (System.currentTimeMillis() - startTimestamp))
+        }
+     }
 
   // ВЫПОЛНИТЬ В ЦИКЛЕ  ОТ 1 ДО 100 CurriedComputation.partiallyAppliedCurriedFunction(
-  //    for(??? <- ???) {
-  //     ???
-  //    print("elapsed time " + (System.currentTimeMillis() - startTimestamp))
-  //   }
+      var cur_t = 0l
+      for(i <- 1 to 100) {
+        cur_t = System.currentTimeMillis() - startTimestamp
+        if(i == 100) {
+          println("elapsed time " + (System.currentTimeMillis() - startTimestamp))
+        }
+     }
 
   // ВЫПОЛНИТЬ В ЦИКЛЕ  ОТ 1 ДО 100 FunctionalComputation.filterApplied
-  //    for(??? <- ???) {
-  //     ???
-  //    print("elapsed time " + (System.currentTimeMillis() - startTimestamp))
-  //   }
+      var func_t = 0l
+      for(i <- 1 to 100) {
+        func_t = System.currentTimeMillis() - startTimestamp
+        if(i == 100) {
+          println("elapsed time " + (System.currentTimeMillis() - startTimestamp))
+        }
+     }
 
   // ВЫВЕСТИ РАЗНИЦУ В ПРОДОЛЖИТЕЛЬНОСТИ ВЫПОЛНЕНИЯ МЕЖДУ КАРРИРОВАННОЙ ВЕРСИЕЙ
   // И ФУНКЦИОНАЛЬНОЙ
 
-  //  val diff = ???
+    val diff = cur_t - func_t
 
-  ///  print(s"Difference is about $diff milliseconds")
+    println(s"Difference is about $diff milliseconds")
 }
 

@@ -41,8 +41,12 @@ object Computation extends App with Data {
   */
 object CurriedComputation extends App with Data {
 
-  def curriedComputation(filterData: String)(dataProducer: Array[String]): Array[String] = dataProducer.filter(dataitem =>
-    filterData.split(" ").contains(dataitem))
+  def curriedComputation(filterData: String)(dataProducer: Array[String]): Array[String] = {
+    Thread.sleep(10)
+    val a = dataProducer.filter(dataitem => filterData.split(" ").contains(dataitem))
+    Thread.sleep(100)//тут??
+    a
+  }
 
   val partiallyAppliedCurriedFunction = curriedComputation(filterData)_
   val result = partiallyAppliedCurriedFunction(dataArray)

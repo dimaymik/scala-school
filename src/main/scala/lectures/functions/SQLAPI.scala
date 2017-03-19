@@ -52,6 +52,7 @@ class SQLAPI(resource :String) {
     */
     logParameter(resource)
     ((logParameter[String]_ andThen openConnection(connection(resource))) andThen logParameter)(sql)
+
   } // use resource from constructor
 
   def openConnection(connection: Connection): (String) => String =
